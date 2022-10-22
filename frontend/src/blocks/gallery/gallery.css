@@ -1,0 +1,13 @@
+.gallery {
+  margin: 0 auto;
+  max-width: 69%;
+  padding: 47px 0 67px 0;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 425px) {
+  .gallery {
+    max-width: 88%;
+    padding: 36px 0 48px 0;
+  }
+}

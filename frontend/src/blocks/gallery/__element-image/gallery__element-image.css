@@ -1,0 +1,11 @@
+.gallery__element-image {
+  position: relative;
+  width: 282px;
+  height: 282px;
+  object-fit: cover;
+  overflow: hidden;
+}
+.gallery__element-image:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}

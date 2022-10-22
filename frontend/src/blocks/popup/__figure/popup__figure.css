@@ -1,0 +1,7 @@
+.popup__figure {
+  position: relative;
+  max-width: 75vw;
+  max-height: 75vh;
+  margin: 0;
+  background-color: rgb(0, 0, 0, 0.9);
+}

@@ -1,0 +1,5 @@
+.gallery__element-like-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
