@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const { celebrate, Joi } = require('celebrate');
@@ -12,6 +13,7 @@ const {
   createUser,
   login,
 } = require('./controllers/users');
+const cors = require('./middlewares/cors');
 const auth = require('./middlewares/auth');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
@@ -19,8 +21,14 @@ const urlRegExp = require('./utils');
 
 const { PORT = 3000 } = process.env;
 
-const app = express();
+const allowedCors = [
+  'https://mesto-praktikum.nomoredomains.icu',
+  'http://mesto-praktikum.nomoredomains.icu',
+  'http://localhost:3002',
+];
 
+const app = express();
+app.use(cors({origin: allowedCors}))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(requestLogger);
