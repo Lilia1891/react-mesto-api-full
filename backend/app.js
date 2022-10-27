@@ -13,7 +13,6 @@ const {
   createUser,
   login,
 } = require('./controllers/users');
-const cors = require('./middlewares/cors');
 const auth = require('./middlewares/auth');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
