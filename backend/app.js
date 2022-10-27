@@ -27,7 +27,11 @@ const allowedCors = [
 ];
 
 const app = express();
-app.use(cors({ origin: allowedCors, methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'] }));
+app.use(cors({
+  origin: allowedCors,
+  methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+  credentials: true,
+}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(requestLogger);
