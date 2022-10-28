@@ -63,7 +63,7 @@ function App() {
 
   const auth = async (jwt) => {
     mestoAuth.getContent(jwt).then((res) => {
-      if (res) {
+      if (res && res.data) {
         setLoggedIn(true);
         setUserData({
           email: res.data.email,

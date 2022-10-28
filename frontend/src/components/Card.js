@@ -3,6 +3,8 @@ import { CurrentUserContext } from "../contexts/CurrentUserContext.js";
 
 function Card({ data, onCardClick, onCardLike, onCardDelete }) {
   const currentUser = React.useContext(CurrentUserContext);
+  console.log(data);
+  console.log(currentUser);
   const isOwn = data.owner._id === currentUser._id;
   const cardDeleteButtonClassName = ` gallery__element-delete ${
     isOwn ? "gallery__element-delete_displayed" : "gallery__element-delete"
