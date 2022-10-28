@@ -14,7 +14,7 @@ export const register = (email, password) => {
     .then((response) => {
 
       try {
-        if (response.status === 201) {
+        if (response.status === 200) {
           return response.json();
         }
       } catch (e) {
