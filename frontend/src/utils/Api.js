@@ -92,7 +92,7 @@ export class Api {
 }
 
 const api = new Api({
-  baseUrl: "http://api.mesto-praktikum.nomoredomains.icu"
+  baseUrl: "https://api.mesto-praktikum.nomoredomains.icu"
 });
 
 export default api;
