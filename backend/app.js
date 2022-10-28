@@ -35,6 +35,7 @@ app.use(cors({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(requestLogger);
+app.options('*', cors());
 app.use('/users', auth, userRouter);
 app.use('/cards', auth, cardRouter);
 app.get('/crash-test', () => {
