@@ -9,7 +9,7 @@ const { errors } = require('celebrate');
 const userRouter = require('./routes/users');
 const cardRouter = require('./routes/cards');
 const NotFoundError = require('./Errors/NotFoundError');
-const { INTERNAL_SERVER_ERROR } = require('./constants');
+const { INTERNAL_SERVER_ERROR, corsOptions } = require('./constants');
 const {
   createUser,
   login,
@@ -21,18 +21,8 @@ const urlRegExp = require('./utils');
 
 const { PORT = 3000 } = process.env;
 
-const allowedCors = [
-  'https://mesto-praktikum.nomoredomains.icu',
-  'http://mesto-praktikum.nomoredomains.icu',
-  'http://localhost:3002',
-];
-
 const app = express();
-app.use(cors({
-  origin: allowedCors,
-  methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
-  credentials: true,
-}));
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(requestLogger);

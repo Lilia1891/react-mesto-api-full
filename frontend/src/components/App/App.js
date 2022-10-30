@@ -63,6 +63,7 @@ function App() {
 
   const auth = async (jwt) => {
     mestoAuth.getContent(jwt).then((res) => {
+      console.log(res)
       if (res && res.data) {
         setLoggedIn(true);
         setUserData({
@@ -191,7 +192,7 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [loggedIn]);
   return (
     <div className="page">
       <CurrentUserContext.Provider value={currentUser}>
